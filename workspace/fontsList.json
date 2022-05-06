@@ -1,0 +1,12 @@
+[ { "name": "NanumBarunGothic", "namePRC": "나눔바른고딕" },
+  { "name": "NanumBarunGothicUltraLight", "namePRC": "나눔바른고딕UltraLight" },
+  { "name": "NanumBarunGothicLight", "namePRC": "나눔바른고딕Light" },
+  { "name": "NanumBarunGothicBlod", "namePRC": "나눔바른고딕Blod" },
+  { "name": "NanumMyeongjoExtraBold", "namePRC": "나눔명조ExtraBold" },
+  { "name": "NanumMyeongjoBold", "namePRC": "나눔명조Blod" },
+  { "name": "NanumMyeongjo", "namePRC": "나눔명조" },
+  { "name": "NanumGothic", "namePRC": "나눔고딕" },
+  { "name": "NanumGothicBold", "namePRC": "나눔고딕LightBlod" },
+  { "name": "NanumGothicExtraBold", "namePRC": "나눔고딕ExtraBold" },
+  { "name": "NanumGothicLight", "namePRC": "나눔고딕Light" }
+]

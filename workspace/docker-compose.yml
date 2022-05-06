@@ -1,0 +1,36 @@
+version: "3.2"
+services:
+  bsdrive:
+    image: docker.nodoc.cn:19000/bisheng/bsdrive:dev
+    # change to ${imageurl}/bisheng/bsdrive:${tag}
+    container_name: bsdrive
+    privileged: true
+    volumes:
+      - ${basedir}/workspace:/workspace
+    # ports:
+    #   - 3000:3000
+    restart: on-failure
+    networks:
+      bisheng:
+        aliases:
+          - bsdrive
+  bso:
+    image: docker.nodoc.cn:19000/bisheng/bso:dev
+    # change to ${imageurl}/bisheng/bso:${tag}
+    container_name: bso
+    privileged: true
+    environment:
+      ADDR: bso:5500
+    volumes:
+      - ${basedir}/workspace:/workspace
+    # ports:
+    #   - 5500:5500
+    restart: on-failure
+    networks:
+      bisheng:
+        aliases:
+          - bso
+
+networks:
+  bisheng:
+    external: true

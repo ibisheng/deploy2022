@@ -1,0 +1,70 @@
+version: "3.2"
+services:
+  nginx:
+    image: ${imageurl}/bisheng/nginx:1.20.1
+    container_name: nginx
+    privileged: true
+    volumes:
+      - ${basedir}/service/nginx/config:/config:rw
+      - ${basedir}/service/nginx/temp:/temp:rw
+      - ${basedir}/service/nginx/keys:/keys:rw
+    ports:
+      - 80:80
+      - 443:443
+    restart: on-failure
+    networks:
+      bisheng:
+        aliases:
+          - nginx
+  minio:
+    image: quay.io/minio/minio:RELEASE.2021-10-10T16-53-30Z.fips
+    # change to ${imageurl}/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
+    container_name: minio
+    volumes:
+      - ${basedir}/service/minio/data:/data:rw
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password
+      # ports:
+      # - 9000:9000
+      # - 9001:9001
+    restart: on-failure
+    command: server --console-address :9001 /data
+    networks:
+      bisheng:
+        aliases:
+          - minio
+  redis:
+    image: ${imageurl}/bisheng/redis:4.0
+    container_name: redis
+    volumes:
+      - ${basedir}/service/redis/db:/data:rw
+      - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
+      # ports:
+      # - 6379:6379
+    restart: on-failure:10
+    command: /usr/local/etc/redis/redis.conf
+    networks:
+      bisheng:
+        aliases:
+          - redis
+  mysql:
+    image: ${imageurl}/bisheng/mysql:5.7
+    container_name: mysql
+    restart: always
+    volumes:
+      - ${basedir}/service/mysql/data:/var/lib/mysql
+      - ${basedir}/service/mysql/logs:/var/log/mysql
+      # ports:
+      # - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    networks:
+      bisheng:
+        aliases:
+          - mysql
+networks:
+  bisheng:
+    external: true
