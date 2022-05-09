@@ -27,6 +27,7 @@ cp  workspace/config.sample.yml  workspace/config/config.yml
 
 mkdir $1/workspace
 mkdir $1/workspace/fonts
+mkdir $1/workspace/logs
 mkdir $1/service
 
 cp -r service/* $1/service
