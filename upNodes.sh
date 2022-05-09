@@ -15,6 +15,8 @@ export imageurl=$imageurl
 export basedir=$data
 export tag=$tag
 
+
+
 cd $data/service
 echo "up service"
 docker-compose up -d

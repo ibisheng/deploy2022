@@ -11,6 +11,15 @@ tag=${arr[1]}
 imageurl=${arr[2]}
 
 
+if [  -f "workspace/config/config.yml" ] ;then
+  #更新系统配置文件
+ rm $data/workspace/config/config.yml
+ cp -r workspace/config/config.yml $data/workspace/config/config.yml
+fi
+
+
+
+
 export imageurl=$imageurl
 export basedir=$data
 export tag=$tag
