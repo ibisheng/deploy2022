@@ -25,6 +25,7 @@ sleep 20
 cd -
 
 cd $data/workspace
+
 echo "up apps"
 docker-compose up -d
 

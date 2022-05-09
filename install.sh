@@ -22,6 +22,8 @@ bash pullImage.sh
 echo "$1 $tag $imageurl" > .config
 
 cp  workspace/config.sample.yml workspace/config/config.yml
+cp  workspace/docker-compose.yml workspace
+
 
 mkdir $1/workspace
 mkdir $1/workspace/fonts
