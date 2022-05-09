@@ -17,11 +17,11 @@ docker network create bisheng
 export basedir=$1
 export tag=v4
 export imageurl=registry.cn-zhangjiakou.aliyuncs.com/bisheng
-bash pullImage.sh $imageurl $tag
+bash pullImage.sh
 
 echo "$1 $tag $imageurl" > .config
 
-
+cp  workspace/config/config.sample.yml workspace/config/config.yml
 
 cp -r service $1/
 cp -r workspace $1/
