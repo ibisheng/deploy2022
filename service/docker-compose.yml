@@ -28,7 +28,7 @@ services:
       # ports:
       # - 9000:9000
       # - 9001:9001
-    restart: on-failure
+    restart: always
     command: server --console-address :9001 /data
     networks:
       bisheng:
@@ -42,7 +42,7 @@ services:
       - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
       # ports:
       # - 6379:6379
-    restart: on-failure:10
+    restart: always
     command: /usr/local/etc/redis/redis.conf
     networks:
       bisheng:
