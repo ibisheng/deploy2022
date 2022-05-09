@@ -17,7 +17,8 @@ if [  -f "workspace/config/config.yml" ] ;then
  cp -r workspace/config/config.yml $data/workspace/config/config.yml
 fi
 
-
+cp -rf workspace/*ttf $1/workspace/fonts
+cp -rf workspace/*ttc $1/workspace/fonts
 
 
 export imageurl=$imageurl
