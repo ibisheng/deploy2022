@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ ! -n "$1" ] ;then
-    echo "必须指定一个安装目录"
+    echo "require a install dir"
     exit
 fi
 
@@ -15,17 +15,16 @@ docker rm nginx minio redis mysql bsdrive bso -f  1 > /dev/null 2>&1
 docker network create bisheng
 
 export basedir=$1
-export tag=v3
+export tag=v4
 export imageurl=registry.cn-zhangjiakou.aliyuncs.com
 bash pullImage.sh $imageurl $tag
 
-echo "$1 $tag" > .config
+echo "$1 $tag $imageurl" > .config
 
-mkdir $1/service
-mkdir $1/workspace
 
-cp -r service/* $1/service
-cp -r workspace/* $1/workspace
+
+cp -r service $1/
+cp -r workspace $1/
 
 cd $basepath
 
