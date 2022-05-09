@@ -21,10 +21,17 @@ bash pullImage.sh
 
 echo "$1 $tag $imageurl" > .config
 
-cp  workspace/config/config.sample.yml workspace/config/config.yml
+cp  workspace/config.sample.yml workspace/config/config.yml
 
-cp -r service $1/
-cp -r workspace $1/
+mkdir $1/workspace
+mkdir $1/workspace/fonts
+mkdir $1/service
+
+cp -r service/* $1/service
+cp -r workspace/config $1/workspace/
+cp -r workspace/fonts/samples/* $1/workspace/fonts
+
+
 
 cd $basepath
 

@@ -1,1 +1,3 @@
 workspace/config/config.yml
+workspace/fonts/*ttf
+workspace/fonts/*ttc
