@@ -30,7 +30,8 @@ mkdir $1/service
 cp -r service/* $1/service
 cp -r workspace/config $1/workspace/
 cp -r workspace/fonts/samples/* $1/workspace/fonts
-
+cp -r workspace/*ttf $1/workspace/fonts
+cp -r workspace/*ttc $1/workspace/fonts
 
 
 cd $basepath
