@@ -16,9 +16,15 @@ if [  -f "workspace/config/config.yml" ] ;then
  rm $data/workspace/config/config.yml
  cp -r workspace/config/config.yml $data/workspace/config/config.yml
 fi
+if [  -f "service/nginx/config/conf.d/bisheng.conf" ] ;then
+  #更新系统配置文件
+ rm $data/service/nginx/config/conf.d/bisheng.conf  
+ cp -r service/nginx/config/conf.d/bisheng.conf $data/service/nginx/config/conf.d/bisheng.conf 
+fi
 
-cp -rf workspace/*ttf $1/workspace/fonts
-cp -rf workspace/*ttc $1/workspace/fonts
+
+cp -rf workspace/fonts/*ttf $1/workspace/fonts
+cp -rf workspace/fonts/*ttc $1/workspace/fonts
 
 
 export imageurl=$imageurl

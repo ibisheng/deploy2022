@@ -22,7 +22,7 @@ bash pullImage.sh
 echo "$1 $tag $imageurl" > .config
 
 cp  workspace/config.sample.yml  workspace/config/config.yml
-
+cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf  
 
 
 mkdir $1/workspace
@@ -34,8 +34,8 @@ cp -r service/* $1/service
 cp -r workspace/config $1/workspace/
 cp    workspace/docker-compose.yml $1/workspace
 cp -r workspace/fonts/samples/* $1/workspace/fonts
-cp -r workspace/*ttf $1/workspace/fonts
-cp -r workspace/*ttc $1/workspace/fonts
+cp -r workspace/fonts/*ttf $1/workspace/fonts
+cp -r workspace/fonts/*ttc $1/workspace/fonts
 
 
 cd $basepath
