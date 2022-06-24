@@ -2,3 +2,4 @@ workspace/config/config.yml
 workspace/fonts/*ttf
 workspace/fonts/*ttc
 service/nginx/config/conf.d
+.log
