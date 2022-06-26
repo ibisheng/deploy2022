@@ -17,7 +17,7 @@ services:
         aliases:
           - nginx
   minio:
-    image: ${imageurl}/minio_arm:RELEASE.2021-10-10T16-53-30Z.fips
+    image: ${imageurl}/minio_arm:RELEASE.2021-10-10T16-53-30Z
     # change to ${imageurl}/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
     container_name: minio
     volumes:
