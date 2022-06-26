@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   bsdrive:
-    image: ${imageurl}/bsdrive:${tag}
+    image: ${imageurl}/bsdrive_arm:${tag}
     container_name: bsdrive
     privileged: true
     volumes:
@@ -14,7 +14,7 @@ services:
         aliases:
           - bsdrive
   bso:
-    image: ${imageurl}/bso:${tag}
+    image: ${imageurl}/bso_arm:${tag}
     container_name: bso
     privileged: true
     environment:
