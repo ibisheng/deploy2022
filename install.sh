@@ -15,7 +15,7 @@ docker rm nginx minio redis mysql bsdrive bso -f  1 > /dev/null 2>&1
 docker network create bisheng
 
 export basedir=$1
-export tag=v4
+export tag=v4_arm
 export imageurl=registry.cn-zhangjiakou.aliyuncs.com/bisheng
 bash pullImage.sh
 
@@ -23,7 +23,7 @@ echo "$1 $tag $imageurl" > .config
 
 cp  workspace/config.sample.yml  workspace/config/config.yml
 mkdir service/nginx/config/conf.d
-cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf  
+cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf
 
 
 mkdir $1/workspace
