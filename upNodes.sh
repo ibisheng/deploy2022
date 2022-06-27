@@ -30,3 +30,7 @@ echo "up apps"
 docker-compose up -d
 
 cd -
+
+sleep 30
+cd -
+docker restart nginx

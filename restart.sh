@@ -23,4 +23,7 @@ sleep 20
 cd $data/workspace
 docker-compose restart
 
-sleep 10
+sleep 30
+cd -
+docker restart nginx
+
