@@ -29,4 +29,6 @@ cd $data/workspace
 echo "up apps"
 docker-compose up -d
 
+sleep 30
 cd -
+docker restart nginx
