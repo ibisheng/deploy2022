@@ -35,7 +35,7 @@ services:
         aliases:
           - minio
   redis:
-    image: ${imageurl}/rejson_arm:2.0.6
+    image: ${imageurl}/rejson_arm:2.0.9
     container_name: redis
     volumes:
       - ${basedir}/service/redis/db:/data:rw
