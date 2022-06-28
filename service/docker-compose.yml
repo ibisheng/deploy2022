@@ -49,7 +49,7 @@ services:
         aliases:
           - redis
   mysql:
-    image: ${imageurl}/mysql:5.7
+    image: ${imageurl}/mysql:8-oracle
     container_name: mysql
     restart: always
     volumes:
