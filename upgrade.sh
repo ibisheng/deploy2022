@@ -33,5 +33,6 @@ export tag=$tag
 
 bash pullImage.sh $imageurl $tag
 bash upNodes.sh
+bash restart.sh
 
 docker rmi -f  `docker images | grep '<none>' | awk '{print $3}'`
