@@ -18,7 +18,7 @@ export tag=$tag
 cd $data/service
 docker-compose restart
 
-sleep 20
+sleep 60
 
 cd $data/workspace
 docker-compose restart
