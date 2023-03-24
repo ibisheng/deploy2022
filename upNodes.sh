@@ -21,7 +21,7 @@ cd $data/service
 echo "up service"
 docker-compose up -d
 
-sleep 20
+sleep 60
 cd -
 
 cd $data/workspace

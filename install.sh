@@ -23,7 +23,7 @@ echo "$1 $tag $imageurl" > .config
 
 cp  workspace/config.sample.yml  workspace/config/config.yml
 mkdir service/nginx/config/conf.d
-cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf  
+cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf
 
 
 mkdir $1/workspace
@@ -42,7 +42,7 @@ cp -r workspace/fonts/*ttc $1/workspace/fonts
 cd $basepath
 
 bash upNodes.sh
-bash restart.sh
+#bash restart.sh
 bash clearImages.sh
 
 echo "你开始使用毕升Office即表示你同意链接 https://ibisheng.cn/apps/blog/posts/agreement.html 中的内容"
