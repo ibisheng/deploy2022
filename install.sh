@@ -23,7 +23,7 @@ echo "$1 $tag $imageurl" > .config
 
 cp  workspace/config.sample.yml  workspace/config/config.yml
 mkdir service/nginx/config/conf.d
-cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf  
+cp  service/nginx/bisheng.sample.conf   service/nginx/config/conf.d/bisheng.conf
 
 
 mkdir $1/workspace
