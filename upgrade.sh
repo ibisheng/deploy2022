@@ -11,12 +11,12 @@ tag=${arr[1]}
 imageurl=${arr[2]}
 
 
-if [  -f "workspace/config/config.yml" ] ;then
+if [ ! -f "$data/workspace/config/config.yml" ] ;then
   #更新系统配置文件
  rm $data/workspace/config/config.yml
  cp -r workspace/config/config.yml $data/workspace/config/config.yml
 fi
-if [  -f "service/nginx/config/conf.d/bisheng.conf" ] ;then
+if [ ! -f "$data/service/nginx/config/conf.d/bisheng.conf" ] ;then
   #更新系统配置文件
  rm $data/service/nginx/config/conf.d/bisheng.conf
  cp -r service/nginx/config/conf.d/bisheng.conf $data/service/nginx/config/conf.d/bisheng.conf
